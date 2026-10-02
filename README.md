@@ -67,7 +67,7 @@ Model weight files (`best12x.pt`, `sam_vit_h_4b8939.pth`) are **not** committed 
 ## Installation
 
 ```bash
-git clone https://github.com/<your-username>/sem-nanoparticle-analysis-tool.git
+git clone https://github.com/<your-username>/SEM-Automated-Nanoparticle-Analysis-Tool-YOLOv8-SAM.git
 cd sem-nanoparticle-analysis-tool
 
 python -m venv venv
