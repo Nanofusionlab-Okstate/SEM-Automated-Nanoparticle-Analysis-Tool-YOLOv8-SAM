@@ -47,15 +47,15 @@ See the paper's Methodology section for the full technical description, matching
 .
 ├── app.py                     # Streamlit application (entry point)
 ├── scripts/
+│   ├──sem_templates/         # Scale-bar label templates used for calibration (add your own as needed)
 │   ├── detector.py            # YOLOv8 + SAM detection, de-clustering, filtering
-│   ├── data_reader.py         # Image I/O: TIFF / DM3 / DM4 / standard formats
+│   ├── data_reader.py         # Image I/O: TIFF / PNG / JPEG / standard formats
 │   ├── metrology.py           # Scale-bar calibration (template matching + OCR)
 │   ├── analysis.py            # Particle-level & population-level metrology
 │   ├── sam_visualize.py       # Mask overlays, heatmaps, annotated figures
 │   ├── clustering.py          # Batch-level K-means categorization
 │   ├── validator.py           # Pre-screening of micrographs for analysis viability
-│   └── perspective.py         # Perspective-mode pipeline: contact angle, height, base diameter for tilted micrographs
-├── sem_templates/             # Scale-bar label templates used for calibration (add your own as needed)
+│   └── perspective.py         # Perspective-mode pipeline: contact angle, height, base diameter for tilted micrographs   
 ├── outputs/                   # Analysis outputs are written here at runtime (git-ignored)
 ├── examples/                  # Example input micrographs (optional, add your own)
 ├── requirements.txt
