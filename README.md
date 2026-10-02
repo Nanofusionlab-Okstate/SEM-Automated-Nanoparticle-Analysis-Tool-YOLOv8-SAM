@@ -1,4 +1,4 @@
-# SEM Nanoparticle Analysis Tool
+# Machine Learning Integrated Quantitative SEM Analytics Using Object Detection and Instance Segmentation for Nanoparticle Metrology
 
 Machine-learning framework for quantitative SEM nanoparticle metrology using object detection (YOLOv8) and instance segmentation (Segment Anything / SAM). Companion code for the paper:
 
