@@ -88,6 +88,8 @@ brew install tesseract
 
 A CUDA-capable GPU is strongly recommended for the YOLO + SAM detection stage (it will fall back to CPU automatically, but will be considerably slower).
 
+**License note:** this repository's own code is released under the MIT License (see [LICENSE](LICENSE)). It depends on [Ultralytics YOLOv8](https://github.com/ultralytics/ultralytics), which is licensed under AGPL-3.0. AGPL-3.0 is a copyleft license — if you build on or redistribute this pipeline (including as a hosted service), Ultralytics' AGPL terms apply to that dependency, and you may need either to comply with AGPL for your own distribution or obtain a commercial license from Ultralytics for closed-source use. This does not affect academic/research use of this repository as-is.
+
 ## Model weights
 
 Two model checkpoints are required and must be placed in the **repository root** (same folder as `app.py`):
