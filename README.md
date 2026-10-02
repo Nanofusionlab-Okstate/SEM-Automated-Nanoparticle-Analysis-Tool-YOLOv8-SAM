@@ -94,15 +94,15 @@ Two model checkpoints are required and must be placed in the **repository root**
 
 | File | Model | Source |
 |---|---|---|
-| `best12x.pt` | Custom-trained YOLOv8 nanoparticle detector by Genc etl | (https://drive.google.com/drive/folders/1-ooqb_eBRD0WLau7fTwLcZzDW7jWfmDM)|
-| `sam_vit_h_4b8939.pth` | Segment Anything (ViT-H) | https://github.com/facebookresearch/segment-anything |
+| `best12x.pt` | Custom-trained YOLOv8 nanoparticle detector by Genc etl | https://drive.google.com/drive/folders/1-ooqb_eBRD0WLau7fTwLcZzDW7jWfmDM|
+| `sam_vit_h_4b8939.pth` | Segment Anything (ViT-H) |https://dl.fbaipublicfiles.com/segment_anything/sam_vit_h_4b8939.pth|
 
 > `mobile_sam.pt` is referenced as an optional lighter-weight SAM variant for future use and is not required to run the current pipeline.
 
 Download both files and place them directly in the repository root:
 
 ```
-sem-nanoparticle-analysis-tool/
+sem-Automated-Nanoparticle-Analysis-Tool-YOLOv8-SAM/
 ├── app.py
 ├── best12x.pt              <-- place here
 ├── sam_vit_h_4b8939.pth    <-- place here
