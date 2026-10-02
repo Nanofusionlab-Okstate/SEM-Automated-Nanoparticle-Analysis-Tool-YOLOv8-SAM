@@ -34,7 +34,7 @@ Given a raw SEM micrograph, the tool detects individual nanoparticles, separates
 3. **De-clustering and filtering** (`scripts/detector.py`) — watershed-based splitting separates masks that correspond to multiple physically touching particles; an adaptive-threshold rescue stage recovers particles missed by the primary detector; shape-based filters (minimum area, minimum circularity, maximum aspect ratio) remove noise and non-particle artifacts.
 4. **Quantitative metrology** (`scripts/analysis.py`) — computes per-particle morphology (equivalent diameter, perimeter, circularity, aspect ratio) and spatial descriptors (nearest-neighbor distance, FFT-derived characteristic spacing, surface coverage).
 5. **Batch-level categorization** (`scripts/clustering.py`) — K-means clustering of analyzed micrographs by mean particle size, for organizing large multi-condition datasets.
-6. **Visualization & reporting** (`scripts/sam_visualize.py`, `scripts/publication_figure_function.py`, `app.py`) — diameter-coded heatmaps, interactive Plotly dashboards, publication-ready static figures, and exportable PDF reports, all served through a Streamlit interface.
+6. **Visualization & reporting** (`scripts/sam_visualize.py`, `scripts/analysis.py`, `app.py`) — diameter-coded heatmaps, interactive Plotly dashboards, publication-ready static figures, and exportable PDF reports, all served through a Streamlit interface.
 
 **Perspective Mode** (`scripts/perspective.py`) — a parallel pipeline for tilted/oblique SEM micrographs. It detects particles with a dual-confidence YOLO pass (a primary pass plus a low-confidence recall pass for faint particles, with adaptive-threshold rescue boxes), filters by shape (solidity, circularity, aspect ratio) and SAM mask confidence, resolves occluded/stacked particles by area-ranked front-particle-wins logic, and computes per-particle contact angle, height, and base diameter from spherical-cap geometry.
 
@@ -51,7 +51,6 @@ See the paper's Methodology section for the full technical description, matching
 │   ├── metrology.py           # Scale-bar calibration (template matching + OCR)
 │   ├── analysis.py            # Particle-level & population-level metrology
 │   ├── sam_visualize.py       # Mask overlays, heatmaps, annotated figures
-│   ├── publication_figure_function.py   # 4-panel static publication figure export
 │   ├── clustering.py          # Batch-level K-means categorization
 │   ├── validator.py           # Pre-screening of micrographs for analysis viability
 │   └── perspective.py         # Perspective-mode pipeline: contact angle, height, base diameter for tilted micrographs
@@ -126,9 +125,8 @@ This opens a browser-based interface where you can upload SEM micrographs, run d
 | `detector.py` | YOLOv8 candidate detection, SAM segmentation, watershed de-clustering, adaptive-threshold rescue, shape-based filtering |
 | `data_reader.py` | Loads SEM images (TIFF, DM3/DM4, and standard formats) and normalizes them to 8-bit RGB |
 | `metrology.py` | `SEMCalibrator` class — scale-bar detection via template matching with OCR fallback |
-| `analysis.py` | Per-particle morphology and spatial metrology (`particle_analysis`), nearest-neighbor distance, result formatting/export |
+| `analysis.py` | Per-particle morphology and spatial metrology (`particle_analysis`), nearest-neighbor distance, result formatting/export, and the 4-panel publication figure (`generate_publication_figure`) |
 | `sam_visualize.py` | Mask overlays, diameter-coded heatmaps, annotated figure rendering |
-| `publication_figure_function.py` | 4-panel static (matplotlib) publication figure: size distribution, aspect ratio vs. size, NND vs. size, circularity density |
 | `clustering.py` | `DatasetSorter` — K-means batch categorization by mean particle size |
 | `validator.py` | Pre-screens micrographs for analysis viability (circularity/solidity checks) before detection |
 | `perspective.py` | Perspective-mode pipeline — dual-confidence detection, occlusion resolution, and contact-angle/height/base-diameter metrology for tilted micrographs |
@@ -159,4 +157,4 @@ This project is licensed under the MIT License — see [LICENSE](LICENSE) for de
 
 ## Contact
 
-Questions about this code or the underlying research can be directed to the corresponding author, Ritesh Sachan (rsachan@okstate.edu), or by opening an issue on this repository.
+Questions about this code or the underlying research can be directed to the corresponding author, Ritesh Sachan (rsachan@okstate.edu), Karishma Begum (kbegum@okstate.edu), Vikas Reddy Paduri (vpaduri@okstate.edu) or by opening an issue on this repository.
