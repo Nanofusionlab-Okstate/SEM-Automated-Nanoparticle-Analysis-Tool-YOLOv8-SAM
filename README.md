@@ -94,8 +94,8 @@ Two model checkpoints are required and must be placed in the **repository root**
 
 | File | Model | Source |
 |---|---|---|
-| `best12x.pt` | Custom-trained YOLOv8 nanoparticle detector | **[ADD DRIVE LINK HERE]** |
-| `sam_vit_h_4b8939.pth` | Segment Anything (ViT-H) | **[ADD SAM WEIGHTS LINK HERE]** |
+| `best12x.pt` | Custom-trained YOLOv8 nanoparticle detector by Genc etl | (https://drive.google.com/drive/folders/1-ooqb_eBRD0WLau7fTwLcZzDW7jWfmDM)|
+| `sam_vit_h_4b8939.pth` | Segment Anything (ViT-H) | https://github.com/facebookresearch/segment-anything |
 
 > `mobile_sam.pt` is referenced as an optional lighter-weight SAM variant for future use and is not required to run the current pipeline.
 
