@@ -1,0 +1,32 @@
+# Core app / UI
+streamlit
+streamlit-drawable-canvas
+
+# Deep learning / detection & segmentation
+torch
+torchvision
+ultralytics            # YOLOv8
+git+https://github.com/facebookresearch/segment-anything.git   # SAM (segment_anything package)
+
+# Image I/O and processing
+opencv-python
+Pillow
+rosettasciio           # reads .tif / .dm3 / .dm4 microscope files (imported as `rsciio`)
+pytesseract            # OCR fallback for scale-bar calibration (requires the Tesseract binary, see README)
+
+# Numerical / scientific stack
+numpy
+pandas
+scipy
+scikit-image
+scikit-learn
+
+# Plotting / figures
+plotly
+matplotlib
+seaborn
+colorcet
+cmasher
+
+# PDF report export
+fpdf2
